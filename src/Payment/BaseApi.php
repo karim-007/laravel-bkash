@@ -19,7 +19,7 @@ class BaseApi
     }
 
     /**
-     * Nagad Base Url
+     * bkash Base Url
      * if sandbox is true it will be sandbox url otherwise it is host url
      */
     private function baseUrl()
@@ -32,7 +32,7 @@ class BaseApi
     }
 
     /**
-     * Nagad Request Headers
+     * bkash Request Headers
      *
      * @return array
      */

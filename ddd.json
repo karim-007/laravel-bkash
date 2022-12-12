@@ -1,7 +1,6 @@
 {
     "name": "karim007/laravel-bkash",
     "description": "This is bKash payment gateway for laravel",
-    "type": "library",
     "keywords": [
         "bkash",
         "bkash-payment-gateway",
@@ -9,6 +8,7 @@
         "laravel-bkash",
         "laravel-bkash-payment"
     ],
+    "type": "library",
     "require": {
         "php": "^7.4|^8.0|^8.1",
         "illuminate/support": "~6|~7|~8|~9",
