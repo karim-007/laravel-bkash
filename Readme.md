@@ -3,7 +3,7 @@
 [![Downloads](https://img.shields.io/packagist/dt/karim007/laravel-bkash)](https://packagist.org/packages/karim007/laravel-bkash)
 [![Starts](https://img.shields.io/packagist/stars/karim007/laravel-bkash)](https://packagist.org/packages/karim007/laravel-bkash)
 
-//## Features
+## Features
 
 This is a php/laravel wrapper package for [Bkash](https://developer.bka.sh/)
 
@@ -127,7 +127,7 @@ public function executePayment(Request $request)
 
 ```
 
-### 6. execute payment
+### 6. query payment
 
 ```
 public function queryPayment(Request $request)
@@ -138,7 +138,7 @@ public function queryPayment(Request $request)
 
 ```
 
-### 7. execute payment
+### 7. success
 
 ```
 public function bkashSuccess(Request $request)
