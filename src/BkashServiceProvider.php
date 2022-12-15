@@ -2,8 +2,8 @@
 
 namespace Karim007\LaravelBkash;
 
-use Karim007\LaravelBkash\Payment\Refund;
-use Karim007\LaravelBkash\Payment\Payment;
+use Karim007\LaravelBkash\Payment\BRefund;
+use Karim007\LaravelBkash\Payment\BPayment;
 use Illuminate\Support\ServiceProvider;
 
 class BkashServiceProvider extends ServiceProvider
@@ -32,12 +32,12 @@ class BkashServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . "/../config/bkash.php", "bkash");
 
-        $this->app->bind("payment", function () {
-            return new Payment();
+        $this->app->bind("bpayment", function () {
+            return new BPayment();
         });
 
-        $this->app->bind("refundPayment", function () {
-            return new Refund();
+        $this->app->bind("brefundPayment", function () {
+            return new BRefund();
         });
     }
 }

@@ -5,7 +5,7 @@ namespace Karim007\LaravelBkash\Payment;
 use Karim007\LaravelBkash\Traits\Helpers;
 use Illuminate\Support\Facades\Session;
 
-class Payment extends BaseApi
+class BPayment extends BBaseApi
 {
     use Helpers;
 

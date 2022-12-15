@@ -17,6 +17,6 @@ class BkashRefund extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'refundPayment';
+        return 'brefundPayment';
     }
 }

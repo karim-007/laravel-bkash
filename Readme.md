@@ -25,7 +25,7 @@ composer require karim007/laravel-bkash
 php artisan vendor:publish --provider="Karim007\LaravelBkash\BkashServiceProvider"
 ```
 
-After publish config file setup your credential. you can see this in your config directory nagad.php file
+After publish config file setup your credential. you can see this in your config directory bkash.php file
 
 ```
 "sandbox"         => env("BKASH_SANDBOX", true),

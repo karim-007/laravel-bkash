@@ -4,7 +4,7 @@ namespace Karim007\LaravelBkash\Payment;
 
 use Karim007\LaravelBkash\Traits\Helpers;
 
-class BaseApi
+class BBaseApi
 {
     use Helpers;
 

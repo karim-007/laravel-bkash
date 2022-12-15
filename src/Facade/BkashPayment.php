@@ -21,6 +21,6 @@ class BkashPayment extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'payment';
+        return 'bpayment';
     }
 }

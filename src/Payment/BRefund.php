@@ -2,7 +2,7 @@
 
 namespace Karim007\LaravelBkash\Payment;
 use Illuminate\Support\Facades\Facade;
-class Refund extends BaseApi
+class BRefund extends BBaseApi
 {
     public function index()
     {
@@ -11,7 +11,7 @@ class Refund extends BaseApi
 
     public function refund($post_fields)
     {
-        (new Payment())->getToken();
+        (new BPayment())->getToken();
 
         $token = session()->get('bkash_token');
 
