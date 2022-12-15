@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Karim007\LaravelBkash\Controllers\BkashPaymentController;
 
-//Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth']], function () {
 
     // Payment Routes for bKash
     Route::get('/bkash/payment', [BkashPaymentController::class,'index']);
@@ -17,4 +17,4 @@ use Karim007\LaravelBkash\Controllers\BkashPaymentController;
     Route::get('/bkash/refund', [BkashPaymentController::class,'refundPage'])->name('bkash-refund');
     Route::post('/bkash/refund', [BkashPaymentController::class,'refund'])->name('bkash-refund');
 
-//});
+});
