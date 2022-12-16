@@ -40,7 +40,7 @@ After publish config file setup your credential. you can see this in your config
 ### Set .env configuration
 
 ```
-BKASH_SANDBOX=true // for production use false
+BKASH_SANDBOX=true  #for production use false
 BKASH_APP_KEY=""
 BKASH_APP_SECRET=""
 BKASH_USERNAME=""
