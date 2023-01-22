@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Karim007\LaravelBkash\Controllers\BkashPaymentController;
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['web']], function () {
 
     // Payment Routes for bKash
     Route::get('/bkash/payment', [BkashPaymentController::class,'index']);

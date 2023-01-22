@@ -58,15 +58,13 @@ class BPayment extends BBaseApi
     public function bkashSuccess($pay_success)
     {
         if ($pay_success == 'Completed') {
-
             Session::flash('successMsg', 'Payment has been Completed Successfully');
-
-            return response()->json(['status' => true]);
+            return response()->json(['status' => true,'message'=>'Payment has been Completed Successfully']);
         }
 
         Session::flash('error', 'Payment is not completed');
 
-        return response()->json(['status' => false]);
+        return response()->json(['status' => false,'message'=>'Payment is not completed']);
     }
 
 }

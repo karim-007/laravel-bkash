@@ -14,14 +14,14 @@ class BkashPaymentController
 
     public function getToken()
     {
-        Session::set('bkash')['invoice_amount'] = 100;
+        session()->put('invoice_amount',100);
         return BkashPayment::getToken();
     }
     public function createPayment(Request $request)
     {
         $request['intent'] = 'sale';
         $request['currency'] = 'BDT';
-        $request['amount'] = 100;
+        $request['amount'] = session()->get('invoice_amount') ??100;
         $request['merchantInvoiceNumber'] = rand();
         $request['callbackURL'] = config("bkash.callbackURL");;
 

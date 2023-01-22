@@ -1,6 +1,11 @@
 <script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     function BkashPayment() {
-        showLoading();
+        //showLoading();
         // get token
         $.ajax({
             url: "{{ route('bkash-get-token') }}",
@@ -13,7 +18,7 @@
                 }
             },
             error: function (err) {
-                hideLoading();
+                //hideLoading();
                 showErrorMessage(err);
             }
         });
@@ -25,7 +30,7 @@
         createRequest: function (request) {
             setTimeout(function () {
                 createPayment(request);
-            }, 2000)
+            }, 30)
         },
         executeRequestOnAuthorization: function (request) {
             $.ajax({
@@ -69,14 +74,14 @@
     function createPayment(request) {
         // Amount already checked and verified by the controller
         // because of createRequest function finds amount from this request
-        request['amount'] = "{{ Session::get('bkash')['invoice_amount'] ?? 100 }}"; // max two decimal points allowed
+        request['amount'] = "{{ session()->get('invoice_amount') ?? 100 }}"; // max two decimal points allowed
         $.ajax({
             url: '{{ route('bkash-create-payment') }}',
             data: JSON.stringify(request),
             type: 'POST',
             contentType: 'application/json',
             success: function (data) {
-                hideLoading();
+                //hideLoading();
                 if (data && data.paymentID != null) {
                     paymentID = data.paymentID;
                     bKash.create().onSuccess(data);
@@ -85,7 +90,7 @@
                 }
             },
             error: function (err) {
-                hideLoading();
+               // hideLoading();
                 showErrorMessage(err.responseJSON);
                 bKash.create().onError();
             }
@@ -112,6 +117,6 @@
                 message = response.errorMessage
             }
         }
-        Swal.fire("Payment Failed!", message, "error");
+        alert(message)
     }
 </script>
