@@ -28,7 +28,7 @@ class BPayment extends BBaseApi
 
     public function cPayment($request_data_json)
     {
-        /*if (((string) $request->amount != (string) session()->get('bkash')['invoice_amount'])) {
+        /*if (((string) $request->amount != (string) session()->get('invoice_amount'))) {
             return response()->json([
                 'errorMessage' => 'Amount Mismatch',
                 'errorCode' => 2006
